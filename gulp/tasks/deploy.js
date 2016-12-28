@@ -29,7 +29,9 @@ gulp.task('watch', function() {
 
 gulp.task('scss-lint', function() {
   return gulp.src(paths.scss)
-    .pipe(sassLint())
+    .pipe(sassLint({
+      configFile: './.sass-lint.yml'
+    }))
     .pipe(sassLint.format());
 });
 
@@ -39,7 +41,7 @@ gulp.task('scss', ['scss-lint'], function() {
     .pipe(sourcemaps.init())
     .pipe(sass().on('error', sass.logError))
     .pipe(please({
-      "autoprefixer": true,
+      "autoprefixer": {"browsers": ["last 2 versions"]},
       "filters": true
     }))
     .pipe(sourcemaps.write())

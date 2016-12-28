@@ -5,7 +5,7 @@
 </p>
 
 
-#Didor template
+#Didor starter
 > Didor template es una plantilla para agilizar el inicio y desarrollo de
 proyectos web.
 
@@ -80,6 +80,8 @@ myproject/
 ├── .editorconfig
 ├── .gitignore
 ├── .jshintrc
+├── .pug-lintrc.json
+├── .sass-lint
 ├── bower.json
 ├── gulpfile.js
 ├── LICENSE
@@ -88,33 +90,23 @@ myproject/
 ```
 
 
-##Características
-- [Gulp](http://gulpjs.com) - gulp is a toolkit that helps you automate painful
-or time-consuming tasks in your development workflow.
-- [Browsersync](https://browsersync.io/) - Actualiza el navegador automáticamente
-cuando hay cambios, muestra tu app en distintos dispositivos y navegadores
-simultáneamente y sincroniza las acciones que hagas (scroll, click, ...) en todos
+## Características
+- [Gulp](http://gulpjs.com) - Gulp es un conjunto de herramientas que te ayudará
+a automatizar tareas difíciles o que llevan mucho tiempo en tu flujo de trabajo.
+- [Browsersync](https://browsersync.io/) - Actualiza el navegador automaticamente
+cuando haces cambios, muestra tu app en distintos dispositivos y navegadores
+simultaneamente y sincroniza las acciones que hagas (scroll, click, ...) en todos
 ellos.
 - [HTML 5 Boilerplate](https://html5boilerplate.com/) - La plantilla más popular
 para desarrollar aplicaciones web rápidas, robustas y adaptables.
 - [Sass](http://sass-lang.com/) - CSS con superpoderes.
 - [Pug](https://github.com/pugjs/pug) - Motor de plantillas.
-- Linter Pug, Sass y Js - Mejoran la calidad del código, mantienen el estilo de
+- Linters Pug, Sass y Js - Mejoran la calidad del código, mantienen el estilo de
 codificación y comprueban los errores.
+- [Pleeease](http://pleeease.io) - Combina los mejores postprocesadores. Ayuda a
+crear hojas de estilo limpias, soporte para navegadores antiguos y facilita el
+mantenimiento.
 - Generador de fuentes a partir de iconos svg.
-
-
-##Herramientas utilizadas
-- [Gulp](http://gulpjs.com) - v3.9.1
-- [HTML 5 Boilerplate](https://html5boilerplate.com/) - v5.3.0
-- [browsersync](https://browsersync.io/) - v2.13.0
-- [node Sass](https://www.npmjs.com/package/node-sass) - v3.8.0
-- [pug](https://github.com/pugjs/pug) - v2.0.0-beta4
-- [pug-cli](https://github.com/pugjs/pug-cli) - v1.0.0-alpha6
-- [pug-lint](https://github.com/pugjs/pug-lint) - v2.3.0
-- [sass-Lint](https://github.com/sasstools/sass-lint) - v1.8.2
-- [eslint](http://eslint.org/) - v3.1.1
-- [icon-font-generator](https://www.npmjs.com/package/icon-font-generator) -v1.0.4
 
 
 ## Contribuir
