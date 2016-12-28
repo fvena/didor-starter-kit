@@ -4,12 +4,12 @@ module.exports = {
     css:   './.tmp/css/*.css',
     cssFolder: './.tmp/css',
     html:  './.tmp/*.html',
-    src :  './app',
-    js:    './app/scripts/**/*.js',
-    pug:   './app/**/*.pug',
-    scss:  './app/stylesheets/**/*.scss',
-    fonts: './app/assets/fonts',
-    img:   './app/assets/images',
+    src :  './src',
+    js:    './src/scripts/**/*.js',
+    pug:   './src/**/*.pug',
+    scss:  './src/scss/**/*.scss',
+    fonts: './src/assets/fonts',
+    img:   './src/assets/images',
     dist:  './dist'
   }
 }
