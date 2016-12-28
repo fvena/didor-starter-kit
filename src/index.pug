@@ -11,9 +11,21 @@ html(lang='en')
 
     link(rel='apple-touch-icon', href='apple-touch-icon.png')
 
-    link(rel='stylesheet', href='/css/main.css')
+    // build:css css/style.min.css
+    // bower:css
+    // endbower
+    // inject:css
+    // endinject
+    // endbuild
 
   body
     | Hola mundo!
 
-    script(src='/scripts/main.js')
+    // build:js js/vendor.min.js
+    // bower:js
+    // endbower
+    // endbuild
+    // build:js js/app.min.js
+    // inject:js
+    // endinject
+    // endbuild

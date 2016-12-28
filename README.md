@@ -29,7 +29,7 @@ gulp
 
 Esto te creará un directorio con el nombre myproyect, luego instalará las
 librerías necesarias para que funcionen todas las herramientas de la plantilla,
-luego solo tienes que ejecutar gulp, y automaticamente se abrirá el navegador
+luego solo tienes que ejecutar gulp, y automáticamente se abrirá el navegador
 con la plantilla por defecto y podrás comenzar a desarrollar.
 
 
@@ -46,8 +46,18 @@ Durante el desarrollo se creará una carpeta '.tmp' donde se copiarán los
 archivos compilados css, html, fuentes de iconos,... El contenido de esta
 carpeta será eliminado cada vez que ejecutemos gulp.
 
+#### Dependencias
 
-### Producción
+Instala las dependencias mediante bower y se enlazarán automaticamente en tu
+proyecto, no tendrás que crear los enlaces manualmente. Para ello, asegurate de
+usar `--save` cuando instales alguna dependencia con bower:
+
+```shell
+bower install --save angular
+```
+
+
+## Producción
 
 Optimiza tu proyecto y lo deja listo para que lo subas a producción.
 
@@ -93,7 +103,7 @@ myproject/
 ## Características
 - [Gulp](http://gulpjs.com) - Gulp es un conjunto de herramientas que te ayudará
 a automatizar tareas difíciles o que llevan mucho tiempo en tu flujo de trabajo.
-- [Browsersync](https://browsersync.io/) - Actualiza el navegador automaticamente
+- [Browsersync](https://browsersync.io/) - Actualiza el navegador automáticamente
 cuando haces cambios, muestra tu app en distintos dispositivos y navegadores
 simultaneamente y sincroniza las acciones que hagas (scroll, click, ...) en todos
 ellos.
@@ -106,6 +116,10 @@ codificación y comprueban los errores.
 - [Pleeease](http://pleeease.io) - Combina los mejores postprocesadores. Ayuda a
 crear hojas de estilo limpias, soporte para navegadores antiguos y facilita el
 mantenimiento.
+- [Wiredep](https://github.com/taptapship/wiredep) - Enlaza las dependencias
+instaladas mediante bower automáticamente.
+- [Inject](https://github.com/klei/gulp-inject) - Enlaza automaticamente todos
+los archivos css y javascript.
 - Generador de fuentes a partir de iconos svg.
 
 
