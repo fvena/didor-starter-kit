@@ -70,8 +70,10 @@ ubicación de un archivo o directorio, deberá modificar las rutas en el archivo
 myproject/
 ├── gulp/
 ├── src/
-│   ├── icons/
-│   ├── images/
+│   ├── assets/
+│   │   ├── fonts/
+│   │   ├── icons/
+│   │   └── images/
 │   ├── scripts/
 │   ├── scss/
 │   └── index.pug
