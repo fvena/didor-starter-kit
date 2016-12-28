@@ -89,6 +89,8 @@ myproject/
 
 
 ##Características
+- [Gulp](http://gulpjs.com) - gulp is a toolkit that helps you automate painful
+or time-consuming tasks in your development workflow.
 - [Browsersync](https://browsersync.io/) - Actualiza el navegador automáticamente
 cuando hay cambios, muestra tu app en distintos dispositivos y navegadores
 simultáneamente y sincroniza las acciones que hagas (scroll, click, ...) en todos
@@ -103,6 +105,7 @@ codificación y comprueban los errores.
 
 
 ##Herramientas utilizadas
+- [Gulp](http://gulpjs.com) - v3.9.1
 - [HTML 5 Boilerplate](https://html5boilerplate.com/) - v5.3.0
 - [browsersync](https://browsersync.io/) - v2.13.0
 - [node Sass](https://www.npmjs.com/package/node-sass) - v3.8.0
