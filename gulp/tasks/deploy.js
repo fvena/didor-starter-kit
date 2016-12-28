@@ -12,7 +12,7 @@ var gulp        = require('gulp')
     inject      = require('gulp-inject'),
     wiredep     = require('wiredep').stream,
     del         = require('del'),
-    runSequence = require('run-sequence');
+    runSequence = require('run-sequence').use(gulp);
 
 
 gulp.task('serve', ['scss', 'jshint', 'pug'], function() {

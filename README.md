@@ -63,12 +63,12 @@ Optimiza tu proyecto y lo deja listo para que lo subas a producción.
 
 ```shell
 gulp build
-gulp build-serve
+gulp serve-dist
 ```
 
 Se creará una carpeta "dist" donde tendrás todo tu proyecto optimizado y listo para
 subir a producción. Puedes comprobar como se visualiza la versión optimizada
-ejecutando un servidor de producción `gulp build-serve`.
+ejecutando un servidor de producción `gulp serve-dist`.
 
 
 ##Estructura de archivos
