@@ -1,0 +1,24 @@
+{
+  "name": "didor-starter",
+  "description": "Starter project template",
+  "authors": [
+    "Francisco Vena <fvena32@gmail.com> (http://www.fvena.com/)"
+  ],
+  "license": "MIT",
+  "keywords": [
+    "template",
+    "starter",
+    "npm",
+    "styleguide",
+    "gulp",
+    "bower"
+  ],
+  "homepage": "https://github.com/fvena/didor-starter",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}

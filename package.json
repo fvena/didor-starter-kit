@@ -1,0 +1,23 @@
+{
+  "name": "didor-starter",
+  "version": "0.0.1",
+  "description": "Starter project template",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/fvena/didor-starter.git"
+  },
+  "keywords": [
+    "template",
+    "starter",
+    "npm",
+    "styleguide",
+    "gulp",
+    "bower"
+  ],
+  "author": "Francisco Vena <fvena32@gmail.com> (http://www.fvena.com/)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/fvena/didor-starter/issues"
+  },
+  "homepage": "https://github.com/fvena/didor-starter#readme"
+}
