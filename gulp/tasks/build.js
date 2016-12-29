@@ -3,7 +3,7 @@
 var gulp        = require('gulp'),
     paths       = require('../config.js').paths,
     gulpif      = require('gulp-if'),
-    minifyCss   = require('gulp-minify-css'),
+    cleanCSS    = require('gulp-clean-css'),
     useref      = require('gulp-useref'),
     rev         = require('gulp-rev'),
     revReplace  = require('gulp-rev-replace'),
@@ -17,7 +17,7 @@ gulp.task('compress', ['inject'], function() {
   return gulp.src(paths.html)
     .pipe(useref({ searchPath: [paths.tmp,paths.src] }))
     .pipe(gulpif('*.js', uglify()))
-    .pipe(gulpif('*.css', minifyCss()))
+    .pipe(gulpif('*.css', cleanCSS()))
     .pipe(gulpif('*.js', rev()))
     .pipe(gulpif('*.css', rev()))
     .pipe(revReplace())

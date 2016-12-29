@@ -46,16 +46,6 @@ Durante el desarrollo se creará una carpeta '.tmp' donde se copiarán los
 archivos compilados css, html, fuentes de iconos,... El contenido de esta
 carpeta será eliminado cada vez que ejecutemos gulp.
 
-#### Dependencias
-
-Instala las dependencias mediante bower y se enlazarán automaticamente en tu
-proyecto, no tendrás que crear los enlaces manualmente. Para ello, asegurate de
-usar `--save` cuando instales alguna dependencia con bower:
-
-```shell
-bower install --save angular
-```
-
 
 ## Producción
 
@@ -101,27 +91,71 @@ myproject/
 
 
 ## Características
-- [Gulp](http://gulpjs.com) - Gulp es un conjunto de herramientas que te ayudará
-a automatizar tareas difíciles o que llevan mucho tiempo en tu flujo de trabajo.
-- [Browsersync](https://browsersync.io/) - Actualiza el navegador automáticamente
-cuando haces cambios, muestra tu app en distintos dispositivos y navegadores
-simultaneamente y sincroniza las acciones que hagas (scroll, click, ...) en todos
-ellos.
-- [HTML 5 Boilerplate](https://html5boilerplate.com/) - La plantilla más popular
-para desarrollar aplicaciones web rápidas, robustas y adaptables.
-- [Sass](http://sass-lang.com/) - CSS con superpoderes.
-- [Pug](https://github.com/pugjs/pug) - Motor de plantillas.
-- Linters Pug, Sass y Js - Mejoran la calidad del código, mantienen el estilo de
-codificación y comprueban los errores.
-- [Pleeease](http://pleeease.io) - Combina los mejores postprocesadores. Ayuda a
-crear hojas de estilo limpias, soporte para navegadores antiguos y facilita el
-mantenimiento.
-- [Wiredep](https://github.com/taptapship/wiredep) - Enlaza las dependencias
-instaladas mediante bower automáticamente.
-- [Inject](https://github.com/klei/gulp-inject) - Enlaza automaticamente todos
-los archivos css y javascript.
-- Generador de fuentes a partir de iconos svg.
+El starter utiliza [Gulp](http://gulpjs.com) para automatizar las tareas
+difíciles o que llevan mucho tiempo en tu flujo de trabajo.
 
+Como plantilla base del proyecto se ha utilizado [HTML 5 Boilerplate](https://html5boilerplate.com/) - La plantilla más popular
+para desarrollar aplicaciones web rápidas, robustas y adaptables.
+
+
+#### Manejo de Dependencias
+
+- Instala las dependencias mediante bower y se enlazarán automáticamente en tu
+proyecto, no tendrás que crear los enlaces manualmente. Para ello, asegúrate de
+usar `--save` cuando instales alguna dependencia con bower:
+
+```shell
+bower install --save angular
+```
+
+#### Desarrollo
+- Live reload, tu navegador se recargará automáticamente al guardar algún cambio
+en tu código.
+- Podrás ver tu proyecto en cualquier dispositivo conectado a tu red wifi mediante
+la url: http://192.168.1.1:3000 (sustituye 192.168.1.1 por la IP local de tu equipo).
+- Todos los dispositivos estarán sincronizados, cualquier acción que hagas (scroll,
+click, ...) se replicará en el resto de los dispositivos conectados.
+- Para los estilos utiliza [Sass](http://sass-lang.com/), CSS con superpoderes.
+- Utiliza [Pug](https://github.com/pugjs/pug) como motor de plantillas, simplifica
+tu HTML y añádele nueva funcionalidad.
+- Para mejorar la calidad del código, mantener el estilo de codificación y depurar
+errores, tiene configurados linters para javascript, pug y sass.
+- Con sourcemaps el mantenimiento de los estilos será más sencillo, indicando el
+archivo y la línea de tu código sass cuando depures mediante el inspector del
+navegador.
+- Autoprefixer añadirá automáticamente los prefijos al CSS para que sean soportados
+por todos los navegadores, por lo que mantendrás tu código más limpio.
+- Enlaza todos tus archivos javascript y css automáticamente al crearlos con
+[Inject](https://github.com/klei/gulp-inject), no tendrás que añadirlos en tu
+index.
+
+#### Producción
+- Unifica y comprime todos los archivos para mejorar los tiempos de carga.
+- Añade un hash aleatorio (código alfanumérico) al nombre del archivo cada vez
+que se compila, para evitar que sea cacheado por el navegador y no muestre los
+últimos cambios.
+
+
+##Herramientas utilizadas
+- [HTML 5 Boilerplate](https://html5boilerplate.com/) - v5.3.0
+- [browsersync](https://browsersync.io/) - v2.18.5
+- [Gulp](http://gulpjs.com) - v3.9.1
+- [Gulp Clean css](https://github.com/scniro/gulp-clean-css) - v2.3.2
+- [Gulp Inject](https://github.com/klei/gulp-inject) - v4.2.0
+- [Gulp Jshint](https://github.com/spalger/gulp-jshint) - v2.0.4
+- [Gulp Pleeease](http://pleeease.io) - v2.0.2
+- [Gulp Pug](https://github.com/pugjs/gulp-pug) - v3.2.0
+- [Gulp Pug linter](https://github.com/ilyakam/gulp-pug-linter) - v.0.4.1
+- [Gulp Rev](https://github.com/sindresorhus/gulp-rev) - v7.1.2
+- [Gulp Rev replace](https://github.com/jamesknelson/gulp-rev-replace) - v0.4.3
+- [Gulp Sass](https://github.com/dlmanning/gulp-sass) - v3.0.0
+- [Gulp Sass lint](https://github.com/sasstools/gulp-sass-lint) - v1.3.2
+- [Gulp Sourcemaps](https://github.com/floridoo/gulp-sourcemaps) - v1.9.1
+- [Gulp Uglify](https://github.com/terinjokes/gulp-uglify) - v2.0.0
+- [Gulp Useref](https://github.com/jonkemp/gulp-useref) - v3.1.2
+- [Jshint](https://github.com/jshint/jshint) - v2.9.4
+- [Jshint stylish](https://github.com/sindresorhus/jshint-stylish) - v.2.2.1
+- [Wiredep](https://github.com/taptapship/wiredep) - v4.0.0
 
 ## Contribuir
 Si estás interesado en contribuir, haz un fork del reporsitorio y desarrolla la
