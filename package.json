@@ -1,7 +1,7 @@
 {
-  "name": "didor-starter",
+  "name": "Didor Starter Kit",
   "version": "0.6.0",
-  "description": "Starter project template",
+  "description": "Plantilla frontend para agilizar el inicio y desarrollo de aplicaciones web.",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/fvena/didor-starter.git"
@@ -25,6 +25,7 @@
     "del": "^2.2.2",
     "gulp": "^3.9.1",
     "gulp-clean-css": "^2.3.2",
+    "gulp-favicons": "^2.2.7",
     "gulp-if": "^2.0.2",
     "gulp-inject": "^4.2.0",
     "gulp-jshint": "^2.0.4",
@@ -38,6 +39,7 @@
     "gulp-sourcemaps": "^1.9.1",
     "gulp-uglify": "^2.0.0",
     "gulp-useref": "^3.1.2",
+    "gulp-util": "^3.0.8",
     "jshint": "^2.9.4",
     "jshint-stylish": "^2.2.1",
     "require-dir": "^0.3.1",

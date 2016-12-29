@@ -1,0 +1,27 @@
+{
+  "version": "0.6",
+  "name": "Didor Starter Kit",
+  "launch_path": "/index.html",
+  "description": "Plantilla frontend para agilizar el inicio y desarrollo de aplicaciones web.",
+  "icons": {
+    "60": "/images/touch/firefox_app_60x60.png",
+    "128": "/images/touch/firefox_app_128x128.png",
+    "512": "/images/touch/firefox_app_512x512.png"
+  },
+  "developer": {
+    "name": "Francisco Vena",
+    "url": "http://www.fvena.com"
+  },
+  "installs_allowed_from": [
+    "*"
+  ],
+  "default_locale": "es",
+  "permissions": {
+  },
+  "locales": {
+    "es": {
+      "name": "Didor Starter Kit",
+      "description": "Plantilla frontend para agilizar el inicio y desarrollo de aplicaciones web."
+    }
+  }
+}

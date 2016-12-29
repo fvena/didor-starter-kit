@@ -5,9 +5,8 @@
 </p>
 
 
-#Didor starter
-> Didor template es una plantilla para agilizar el inicio y desarrollo de
-proyectos web.
+#Didor Starter Kit
+> Plantilla frontend para agilizar el inicio y desarrollo de aplicaciones web.
 
 La plantilla cuenta con una estructura de archivos básica que te permitirá poder
 iniciar el desarrollo de un proyecto rápidamente. También cuenta con varias

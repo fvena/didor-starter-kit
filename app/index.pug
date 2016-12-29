@@ -1,0 +1,66 @@
+doctype html
+html(lang='en')
+  head
+    meta(charset='utf-8')
+    meta(http-equiv='x-ua-compatible' content='ie=edge')
+    meta(name='description' content='Plantilla frontend para agilizar el inicio y desarrollo de aplicaciones web.')
+    meta(name='viewport' content='width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0')
+
+    title= 'Didor Starter Kit'
+
+    //- Disable tap highlight on IE
+    meta(name='msapplication-tap-highlight' content='no')
+
+    //- Web Application Manifest -->
+    link(rel='manifest' href='manifest.json')
+
+    //- Add to homescreen for Chrome on Android
+    meta(name='mobile-web-app-capable' content='yes')
+    meta(name='application-name' content='Didor Starter Kit')
+    link(rel='icon' type='image/png' sizes='192x192' href='/images/touch/android-chrome-192x192.png')
+
+    //- Add to homescreen for Safari on iOS
+    meta(name='apple-mobile-web-app-capable' content='yes')
+    meta(name='apple-mobile-web-app-status-bar-style' content='black-translucent')
+    meta(name='apple-mobile-web-app-title' content='Didor Starter Kit')
+    link(rel='apple-touch-icon' sizes='57x57' href='/images/touch/apple-touch-icon-57x57.png')
+    link(rel='apple-touch-icon' sizes='60x60' href='/images/touch/apple-touch-icon-60x60.png')
+    link(rel='apple-touch-icon' sizes='72x72' href='/images/touch/apple-touch-icon-72x72.png')
+    link(rel='apple-touch-icon' sizes='76x76' href='/images/touch/apple-touch-icon-76x76.png')
+    link(rel='apple-touch-icon' sizes='114x114' href='/images/touch/apple-touch-icon-114x114.png')
+    link(rel='apple-touch-icon' sizes='120x120' href='/images/touch/apple-touch-icon-120x120.png')
+    link(rel='apple-touch-icon' sizes='144x144' href='/images/touch/apple-touch-icon-144x144.png')
+    link(rel='apple-touch-icon' sizes='152x152' href='/images/touch/apple-touch-icon-152x152.png')
+    link(rel='apple-touch-icon' sizes='180x180' href='/images/touch/apple-touch-icon-180x180.png')
+
+    //- Tile icon for Win8 (144x144 + tile color)
+    meta(name='msapplication-TileColor' content='#fff')
+    meta(name='msapplication-TileImage' content='/images/touch/mstile-144x144.png')
+    meta(name='msapplication-config' content='/browserconfig.xml')
+
+    //- Color the status bar on mobile devices
+    meta(name='theme-color' content='#fff')
+
+    //- Favicon
+    link(rel='icon' type='image/png' sizes='32x32' href='/images/touch/favicon-32x32.png')
+    link(rel='icon' type='image/png' sizes='16x16' href='/images/touch/favicon-16x16.png')
+    link(rel='shortcut icon' href='/images/touch/favicon.ico')
+
+    // build:css styles/style.min.css
+    // bower:css
+    // endbower
+    // inject:css
+    // endinject
+    // endbuild
+
+  body
+    | Hola mundo!
+
+    // build:js scripts/vendor.min.js
+    // bower:js
+    // endbower
+    // endbuild
+    // build:js scripts/app.min.js
+    // inject:js
+    // endinject
+    // endbuild
