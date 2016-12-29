@@ -1,5 +1,10 @@
-$red: #ff00ff;
+$red: #FF0000;
 
 body {
   color: $red;
+}
+
+.elemeny {
+  display: flex;
+  background: linear-gradient(#f00, #00f);
 }
