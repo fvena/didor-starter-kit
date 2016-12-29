@@ -98,7 +98,7 @@ Como plantilla base del proyecto se ha utilizado [HTML 5 Boilerplate](https://ht
 para desarrollar aplicaciones web rápidas, robustas y adaptables.
 
 
-#### Manejo de Dependencias
+### Manejo de Dependencias
 
 - Instala las dependencias mediante bower y se enlazarán automáticamente en tu
 proyecto, no tendrás que crear los enlaces manualmente. Para ello, asegúrate de
@@ -108,7 +108,7 @@ usar `--save` cuando instales alguna dependencia con bower:
 bower install --save angular
 ```
 
-#### Desarrollo
+### Desarrollo
 - Live reload, tu navegador se recargará automáticamente al guardar algún cambio
 en tu código.
 - Podrás ver tu proyecto en cualquier dispositivo conectado a tu red wifi mediante
@@ -129,7 +129,7 @@ por todos los navegadores, por lo que mantendrás tu código más limpio.
 [Inject](https://github.com/klei/gulp-inject), no tendrás que añadirlos en tu
 index.
 
-#### Producción
+### Producción
 - Unifica y comprime todos los archivos para mejorar los tiempos de carga.
 - Añade un hash aleatorio (código alfanumérico) al nombre del archivo cada vez
 que se compila, para evitar que sea cacheado por el navegador y no muestre los
