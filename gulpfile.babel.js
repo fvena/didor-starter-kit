@@ -53,7 +53,8 @@ const paths = {
   },
   favicon: {
     icon:    './app/assets/images/favicon.png',
-    dest:    './dist/images/touch'
+    dest:    './dist/images/touch',
+    all:     './dist/images/touch/*.*'
   },
   html: {
     folder:  './.tmp',
@@ -68,6 +69,9 @@ const paths = {
     tmp:         '/.tmp/',
     src:         '/app/',
     touch:       '/images/touch/',
+    noPng:       '!./dist/images/touch/*.png',
+    noIco:       '!./dist/images/touch/*.ico',
+    favicon:     './app/assets/images/favicon.png',
     noFavicon:   '!./app/assets/images/favicon.png',
     noTest:      '!./app/scripts/**/*.test.js',
     distAll:     './dist/*',
@@ -181,24 +185,23 @@ gulp.task('inject', () => {
 });
 
 // Espera que se hayan compilado los archivos pug, antes de hacer el inject
-gulp.task('injectPostPug', function() {
+gulp.task('injectPostPug', ()=> {
   runSequence('pug', ['inject']);
 });
 
 
+gulp.task('favicon', ['make-favicon'], ()=> {
+  del([paths.favicon.all,paths.rel.noPng,paths.rel.noIco], {dot: true});
+  gulp.src(paths.rel.favicon, {dot: true})
+    .pipe(gulp.dest(paths.dist))
+})
+
+
 // Genera un favicon
-gulp.task("favicon", () => {
+gulp.task("make-favicon", () => {
   return gulp.src(paths.favicon.icon).pipe($.favicons({
-    appName: "Didor Starter Kit",
-    appDescription: "Plantilla frontend para agilizar el inicio y desarrollo de aplicaciones web.",
-    developerName: "Francisco Vena",
-    developerURL: "http://www.fvena.com/",
     background: "#fff",
     path: paths.rel.touch,
-    url: "https://www.fvena.com/didor/",
-    display: "browser",
-    orientation: "portrait",
-    version: "0.6",
     logging: false,
     online: false,
     html: 'head.html',
@@ -252,7 +255,6 @@ gulp.task('copy', () =>
   gulp.src([paths.assets.all, paths.fonts.all], {
     dot: true
   }).pipe(gulp.dest(paths.assets.dest))
-    .pipe($.size({title: 'copy'}))
 );
 
 
