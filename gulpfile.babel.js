@@ -223,6 +223,12 @@ gulp.task("make-favicon", () => {
 });
 
 
+gulp.task('styleguide', function() {
+  gulp.src('./app/styles/main.scss')
+  .pipe($.didorStyleguide());
+});
+
+
 // Comprime los archivos CSS y JS enlazados en los html y los minifica.
 // Copia los Html al directorio dist
 gulp.task('compress', ['inject'], function() {
@@ -284,6 +290,22 @@ gulp.task('serve:dist', function() {
     server: paths.dist,
     port: 3001
   });
+});
+
+
+// Servidor web de producción
+gulp.task('serve:docs', ['styleguide'], function() {
+  browserSync.init({
+    notify: false,
+    logPrefix: 'DSK',
+    server: ['./docs','.tmp'],
+    port: 3002
+  });
+
+
+  gulp.watch(paths.pugs.all, ['styleguide', reload]);
+  gulp.watch(paths.styles.all, ['styleguide', reload]);
+  gulp.watch(paths.scripts.all, ['styleguide', reload]);
 });
 
 // Comprueba la complejidad del código
