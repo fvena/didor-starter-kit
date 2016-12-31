@@ -28,7 +28,7 @@ p
   a.btn.btn-large button
 **/
 
-.btn{
+.btn {
   display: inline-block;
   padding: .3em .6em;
   color: white;
@@ -36,16 +36,20 @@ p
   text-transform: uppercase;
   background-color: red;
 }
-.btn:hover{
-  background-color: #38306E;
+
+.btn:hover {
+  background-color: #38306e;
 }
-.btn-small{
+
+.btn-small {
   font-size: .8em;
 }
-.btn-medium{
+
+.btn-medium {
   font-size: 1em;
 }
-.btn-large{
+
+.btn-large {
   font-size: 1.3em;
 }
 
@@ -76,7 +80,7 @@ a.btn.btn-round.btn-medium button
 a.btn.btn-round.btn-large button
 **/
 
-.btn-round{
+.btn-round {
   border-radius: 20px;
 }
 
@@ -95,10 +99,11 @@ Very pretty links
 a.btn-link Button
 **/
 
-.btn-link{
+.btn-link {
   background: none;
   color: darkslateblue;
 }
-.btn-link:hover{
+
+.btn-link:hover {
   text-decoration: none;
 }

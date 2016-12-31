@@ -1,5 +1,5 @@
 /**
-[Section] Buttons3
+[Section] Buttons 3
 [Name] Square buttons
 [Description]
 
@@ -18,36 +18,44 @@ Very pretty square buttons
 btn-small, btn-medium, btn-large
 
 [Example]
-a.btn(href='') Button
-a.btn.btn-small(href='') button
-a.btn.btn-medium(href='') button
-a.btn.btn-large(href='') button
+p Simple button Red
+p
+  a.btn Button
+p Sizes
+p
+  a.btn.btn-small button
+  a.btn.btn-medium button
+  a.btn.btn-large button
 **/
 
-.btn{
+.btn {
   display: inline-block;
   padding: .3em .6em;
   color: white;
   text-decoration: none;
   text-transform: uppercase;
-  background-color: green;
+  background-color: black;
 }
-.btn:hover{
-  background-color: #38306E;
+
+.btn:hover {
+  background-color: #38306e;
 }
-.btn-small{
+
+.btn-small {
   font-size: .8em;
 }
-.btn-medium{
+
+.btn-medium {
   font-size: 1em;
 }
-.btn-large{
+
+.btn-large {
   font-size: 1.3em;
 }
 
 
 /**
-[Section] Buttons3
+[Section] Buttons 3
 [Name] Round buttons
 [Description]
 
@@ -66,19 +74,19 @@ Very pretty rounded buttons
 btn-small, btn-medium, btn-large
 
 [Example]
-a.btn.btn-round(href='') Button
-a.btn.btn-round.btn-small(href='') button
-a.btn.btn-round.btn-medium(href='') button
-a.btn.btn-round.btn-large(href='') button
+a.btn.btn-round Button
+a.btn.btn-round.btn-small button
+a.btn.btn-round.btn-medium button
+a.btn.btn-round.btn-large button
 **/
 
-.btn-round{
+.btn-round {
   border-radius: 20px;
 }
 
 
 /**
-[Section] Buttons3
+[Section] Buttons 3
 [Name] Links
 [Description]
 
@@ -88,13 +96,14 @@ Very pretty links
 - /app/styles/_button.scss
 
 [Example]
-a.btn-link(href='') Button
+a.btn-link Button
 **/
 
-.btn-link{
+.btn-link {
   background: none;
   color: darkslateblue;
 }
-.btn-link:hover{
+
+.btn-link:hover {
   text-decoration: none;
 }
