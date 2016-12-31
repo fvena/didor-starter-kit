@@ -1,15 +1,25 @@
 /**
  *
- *  Didor Starter Kit
+ *  DIDOR STARTER KIT
+ *  Plantilla frontend para agilizar el inicio y desarrollo de aplicaciones web.
  *
+ *
+ *  Task disponibles
+ *
+ *  `gulp` - Task por defecto, genera los archivos para producción.
+ *  `gulp serve` - Servidor web con los archivos de desarrollo.
+ *  `gulp serve:dist` - Servidor web con los archivos de producción.
+ *  `gulp serve:docs` - Servidor web con los archivos de la documentación.
+ *  `gulp jsreport` - Comprueba la complejidad del código javascript.
+ *  `gulp sizereport` - Comprueba el tamaño de los archivos generados.
+ *
+ *  Este gulpfile usa las nuevas características de JavaScript.
+ *  Babel lo hace posible sin que tengamos que hacer nada. Simplemente funciona.
+ *  Puedes leer más sobre las nuevas características de JavaScript aquí:
+ *  https://babeljs.io/docs/learn-es2015/
  */
 
 'use strict';
-
-// Este gulpfile usa las nuevas características de JavaScript.
-// Babel lo hace posible sin que tengamos que hacer nada. Simplemente funciona.
-// Puedes leer más sobre las nuevas características de JavaScript aquí:
-// https://babeljs.io/docs/learn-es2015/
 
 import gulp from 'gulp';
 import del from 'del';
@@ -17,7 +27,6 @@ import browserSync from 'browser-sync';
 import pngquant from 'imagemin-pngquant';
 import runSequence from 'run-sequence';
 import gulpLoadPlugins from 'gulp-load-plugins';
-import pkg from './package.json';
 
 const $ = gulpLoadPlugins();
 const reload = browserSync.reload;
@@ -84,7 +93,13 @@ const paths = {
 }
 
 
-// Vigila los cambios en los archivos y regarga el navegador
+/*
+ * SERVER TASK
+ *   - Servidor web con los archivos de producción.
+ *   - Vigila los cambios en los archivos, regarga el navegador.
+ *   - Sincroniza los dispositivos.
+ */
+
 gulp.task('server', ['style', 'lint', 'pug'], function() {
   browserSync({
     notify: false,
@@ -100,7 +115,16 @@ gulp.task('server', ['style', 'lint', 'pug'], function() {
   gulp.watch(paths.fonts.all, reload);
 });
 
-// Compila y añade automaticamente los prefijos a los estilos
+
+
+/*
+ * STYLE TASK
+ *   - Compila los archivos SCSS a CSS.
+ *   - Añade un SourceMaps.
+ *   - Añade prefijos automáticamente.
+ *   - Copia el archivo resultante en la carpeta tmp
+ */
+
 gulp.task('style', ['scss-lint'], () => {
   const AUTOPREFIXER_BROWSERS = [
     'ie >= 10',
@@ -127,7 +151,12 @@ gulp.task('style', ['scss-lint'], () => {
 });
 
 
-// Linter para scss
+
+/*
+ * SCSS-LINT TASK
+ *   - Linter para los archivos SCSS
+ */
+
 gulp.task('scss-lint', function() {
   return gulp.src(paths.styles.all)
     .pipe($.sassLint({
@@ -137,7 +166,14 @@ gulp.task('scss-lint', function() {
 });
 
 
-// Compila los archivos pug en html
+
+/*
+ * PUG TASK
+ *   - Compila los archivos Pug en HTML
+ *   - Linter para los archivos Pug
+ *   - Copia los archivos resultantes en la carpeta tmp
+ */
+
 gulp.task('pug', function buildHTML() {
   return gulp.src(paths.pugs.all)
     .pipe($.pugLinter())
@@ -149,16 +185,26 @@ gulp.task('pug', function buildHTML() {
 });
 
 
-// Transforma el código ES2015 a ES5.
-// para activarlo hay que eliminar la línea `"only": "gulpfile.babel.js",`
-// del archivo `.babelrc`
+
+/*
+ * BABEL TASK
+ *   - Transforma el código ES2015 a ES5.
+ *   - Para activarlo hay que eliminar la línea `"only": "gulpfile.babel.js",`
+ *     del archivo `.babelrc`
+ */
+
 gulp.task('babel', () =>
     gulp.src(paths.scripts.all)
       .pipe($.babel())
 );
 
 
-// Lint JavaScript
+
+/*
+ * LINT TASK
+ *   - Linter para los archivos javascript.
+ */
+
 gulp.task('lint', () =>
   gulp.src(paths.scripts.all)
     .pipe($.eslint())
@@ -168,8 +214,13 @@ gulp.task('lint', () =>
 );
 
 
-// Busca en las carpetas de estilos y javascript los archivos que hayamos creado
-// para inyectarlos en el index.html
+
+/*
+ * INJECT TASK
+ *   - Busca en las carpetas de estilos y javascript los archivos que hayamos
+ *     creado y los injecta automáticamente en el indes.html
+ */
+
 gulp.task('inject', () => {
   var injectStyles = gulp.src([paths.css.all], {read: false});
   var injectScripts = gulp.src([paths.scripts.all, paths.rel.noTest], {read: false})
@@ -184,11 +235,24 @@ gulp.task('inject', () => {
     .pipe(gulp.dest(paths.html.folder))
 });
 
-// Espera que se hayan compilado los archivos pug, antes de hacer el inject
+
+
+/*
+ * INJECT TASK
+ *   - Espera que se hayan compilado los archivos pug, antes de hacer el inject.
+ */
+
 gulp.task('injectPostPug', ()=> {
   runSequence('pug', ['inject']);
 });
 
+
+
+/*
+ * FAVICON TASK
+ *   - Elimina algunos archivos no necesarios generados por el plugin favicon.
+ *   - Copia el favicon.ico al directorio raíz de la carpeta de producción.
+ */
 
 gulp.task('favicon', ['make-favicon'], ()=> {
   del([paths.favicon.all,paths.rel.noPng,paths.rel.noIco], {dot: true});
@@ -197,7 +261,12 @@ gulp.task('favicon', ['make-favicon'], ()=> {
 })
 
 
-// Genera un favicon
+
+/*
+ * MAKE-FAVICON TASK
+ *   - Crea un favicon e iconos touch para navegadores y dispositivos.
+ *   - Los guarda en la carpeta de producción.
+ */
 gulp.task("make-favicon", () => {
   return gulp.src(paths.favicon.icon).pipe($.favicons({
     background: "#fff",
@@ -223,14 +292,30 @@ gulp.task("make-favicon", () => {
 });
 
 
+
+/*
+ * STYLEGUIDE TASK
+ *   - Genera una guía de estilos con los comentarios en el css.
+ *   - La guía se genera en la carpeta docs
+ */
+
 gulp.task('styleguide', function() {
   gulp.src('./app/styles/main.scss')
-  .pipe($.didorStyleguide());
+    .pipe($.didorStyleguide());
 });
 
 
-// Comprime los archivos CSS y JS enlazados en los html y los minifica.
-// Copia los Html al directorio dist
+
+/*
+ * COMPRESS TASK
+ *   - Unifica los archivos CSS y JavaScripts.
+ *   - Comprime los archivos JavaScripts.
+ *   - Comprime los archivos CSS.
+ *   - Comprime los archivos HTML.
+ *   - Añade un Hash a los archivos CSS y JavaScript resultantes.
+ *   - Los copia en la carpeta dist.
+ */
+
 gulp.task('compress', ['inject'], function() {
   return gulp.src(paths.html.all)
     .pipe($.useref({ searchPath: [paths.tmp,paths.src] }))
@@ -244,7 +329,13 @@ gulp.task('compress', ['inject'], function() {
 })
 
 
-// Optimizar imágenes
+
+/*
+ * IMAGES TASK
+ *   - Optimiza las imágenes.
+ *   - Las copia en la carpeta dist.
+ */
+
 gulp.task('images', () =>
   gulp.src([paths.images.all,paths.rel.noFavicon])
     .pipe($.cache($.imagemin({
@@ -256,7 +347,12 @@ gulp.task('images', () =>
 );
 
 
-// Copy all files at the root level (app)
+
+/*
+ * COPY TASK
+ *   - Copia todos los assets a la carpeta dist.
+ */
+
 gulp.task('copy', () =>
   gulp.src([paths.assets.all, paths.fonts.all], {
     dot: true
@@ -264,15 +360,23 @@ gulp.task('copy', () =>
 );
 
 
-// Limpia el directorio temporal
+
+/*
+ * CLEAN TASK
+ * CLEAN-TMP TASK
+ *   - Limpia el directorio temporal y de destino
+ */
+
 gulp.task('clean-tmp', () => del([paths.tmp], {dot: true}));
-
-
-// Limpia el directorio de salida
 gulp.task('clean', () => del([paths.rel.distAll, paths.rel.noDistGit], {dot: true}));
 
 
-// Genera los archivos para producción, tarea por defecto
+
+/*
+ * DEFAULT TASK
+ *   - Genera los archivos para producción
+ */
+
 gulp.task('default', ['clean'], function() {
   runSequence(['style', 'pug'], ['compress', 'images', 'copy', 'favicon']);
 });
@@ -293,7 +397,7 @@ gulp.task('serve:dist', function() {
 });
 
 
-// Servidor web de producción
+// Servidor web para los docs
 gulp.task('serve:docs', ['styleguide'], function() {
   browserSync.init({
     notify: false,
