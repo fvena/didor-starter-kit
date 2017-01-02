@@ -1,0 +1,14 @@
+/**
+ * CLEARFIX
+ *
+ * Mediante la clase clearfix, o extendiendola con sass, evita que el
+ * contenedor de elementos flotantes tenga altura cero.
+ */
+
+@mixin clearfix {
+  &::after {
+    display: block;
+    clear: both;
+    content: '';
+  }
+}

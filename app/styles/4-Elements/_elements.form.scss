@@ -1,0 +1,48 @@
+/**
+ * FORM
+ */
+
+input,
+button,
+select,
+textarea {
+  font-family: inherit;
+  font-size: inherit;
+  line-height: inherit;
+}
+
+label,
+textarea,
+input[type='file'] {
+  display: block;
+}
+
+input {
+  cursor: pointer;
+}
+
+input,
+input[type='text'],
+input[type='email'],
+input[type='password'],
+input[type='search'],
+input[type='url'],
+textarea {
+  //border: 1px solid $border-color;
+}
+
+input[type='radio'],
+input[type='checkbox'] {
+  position: relative;
+  bottom: 1px;
+  margin-right: halve($space);
+  vertical-align: middle;
+}
+
+input[disabled] {
+  //background-color: lighten($color-ui, 5%);
+
+  &:hover {
+    cursor: not-allowed;
+  }
+}

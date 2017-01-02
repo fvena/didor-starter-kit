@@ -1,0 +1,12 @@
+/**
+ * OBJECTS
+ *
+ * In objects, we’re really talking about design patterns like the media object.
+ * This is the first layer where you’d begin to use classes. Here you’d want to
+ * choose agnostic names that aren’t specific to the type of object. For example,
+ * you may have a .slider-list, but not a .product-slider-list. The idea is to
+ * keep these cosmetic-free in order to keep them reusable across component
+ * instances.
+ */
+
+@import 'objects.grid';

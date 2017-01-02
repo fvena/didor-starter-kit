@@ -1,0 +1,17 @@
+/**
+ * DEFAULTS SETTINGS
+ */
+
+// Espacio por defecto
+$space: $base-line-height * 1rem;
+
+$base-background-color:   map-get($color-gray-map, gray7);
+$base-text-color:         map-get($color-gray-map, gray2);
+$base-link-color:         map-get($color-brand-map, primary);
+$base-link-color-dark:    map-get($color-brand-map, primary-dark);
+$base-heading-color:      map-get($color-gray-map, gray1);
+$caption-colour:          map-get($color-gray-map, gray4);
+$code-background-colour:  map-get($color-gray-map, gray5);
+
+$gutter: $space !default;
+$grid-columns: 12 !default;

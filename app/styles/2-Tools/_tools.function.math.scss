@@ -1,0 +1,66 @@
+/**
+ * Maths functions.
+ */
+
+/**
+ * Funciones que devuelven un valor entero proporcional. Ejemplo de uso.
+ *
+ * .foo {
+ *   padding: halve(20px);
+ *   margin: double($space);
+ * }
+ */
+
+
+@function quarter($value) {
+  @return $value / 4;
+}
+
+@function third($value) {
+  @return $value / 3;
+}
+
+@function halve($value) {
+  @return $value / 2;
+}
+
+@function double($value) {
+  @return $value * 2;
+}
+
+@function triple($value) {
+  @return $value * 3;
+}
+
+@function quadruple($value) {
+  @return $value * 4;
+}
+
+
+@function rem2px($value) {
+  @return $value / 1rem * 10px;
+}
+
+/**
+ * Devuelve el valor 'x' elevado a 'y'. Ejemplo de uso.
+ *
+ * pow(2,2) = 2*2     // 4
+ * pow(2,3) = 2*2*2   // 8
+ */
+@function pow($x, $y) {
+  $ret: 1;
+
+  @if $y > 0 {
+    @for $i from 1 through $y {
+      $ret: $ret * $x;
+    }
+  }
+
+  @else if $y < 0 {
+    @for $i from $y to 0 {
+      $ret: $ret / $x;
+    }
+  }
+
+  @return $ret;
+}

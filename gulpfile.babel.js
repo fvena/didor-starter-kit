@@ -34,6 +34,7 @@ const paths = {
   tmp:       './.tmp',
   src :      './app',
   dist:      './dist',
+  docs:      './docs',
   styles: {
     all:     './app/styles/**/*.scss',
     main:    './app/styles/main.scss',
@@ -49,6 +50,7 @@ const paths = {
     dest:    './.tmp'
   },
   assets: {
+    folder:  './app/assets',
     all:     './app/assets/*.*',
     dest:    './dist'
   },
@@ -72,6 +74,7 @@ const paths = {
   },
   css: {
     folder:  './.tmp/styles',
+    main:    './.tmp/styles/main.css',
     all:     './.tmp/styles/**/*.css'
   },
   rel: {
@@ -81,6 +84,7 @@ const paths = {
     noPng:       '!./dist/images/touch/*.png',
     noIco:       '!./dist/images/touch/*.ico',
     favicon:     './app/assets/images/favicon.png',
+    logo:        '/images/didor-logo.png',
     noFavicon:   '!./app/assets/images/favicon.png',
     noTest:      '!./app/scripts/**/*.test.js',
     distAll:     './dist/*',
@@ -301,7 +305,11 @@ gulp.task("make-favicon", () => {
 
 gulp.task('styleguide', function() {
   gulp.src('./app/styles/main.scss')
-    .pipe($.didorStyleguide());
+    .pipe($.didorStyleguide({
+      logo: paths.rel.logo,
+      css: paths.css.main,
+      outputFolder: paths.docs
+    }));
 });
 
 
@@ -402,7 +410,7 @@ gulp.task('serve:docs', ['styleguide'], function() {
   browserSync.init({
     notify: false,
     logPrefix: 'DSK',
-    server: ['./docs','.tmp'],
+    server: [paths.tmp, paths.docs, paths.assets.folder],
     port: 3002
   });
 

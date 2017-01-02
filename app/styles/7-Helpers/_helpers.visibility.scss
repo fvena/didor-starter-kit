@@ -1,0 +1,56 @@
+/**
+ * VISIBILITY
+ *
+ * Helpers para mostrar/ocultar elementos.
+ */
+
+// Oculta un elemento
+.hidden {
+  display: none !important;
+}
+
+// Muestra un elemento con display block
+.visible,
+.block {
+  display: block !important;
+}
+
+// Muestra un elemento con display inline-block
+.inline-block {
+  display: inline-block !important;
+}
+
+// Muestra un elemento con displau inline
+.inline {
+  display: inline !important;
+}
+
+
+/**
+ * Genera clases helpers que muestran/ocultan elementos de forma responsive.
+ * Ejemplo de uso.
+ *
+ * <p class="hidden palm-block">
+ * <p class="palm-hidden">
+ */
+
+@each $breakpoint, $size in $breakpoints {
+  @include media($breakpoint) {
+    .#{$breakpoint}-hidden {
+      display: none !important;
+    }
+
+    .#{$breakpoint}-block,
+    .#{$breakpoint}-visible {
+      display: block !important;
+    }
+
+    .#{$breakpoint}-inline-block {
+      display: inline-block !important;
+    }
+
+    .#{$breakpoint}-inline {
+      display: inline !important;
+    }
+  }
+}

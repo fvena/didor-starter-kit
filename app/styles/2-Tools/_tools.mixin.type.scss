@@ -1,0 +1,68 @@
+/**
+ * TYPE MIXIN
+ */
+
+
+/**
+ * ROOTSIZE
+ *
+ * Genera los tamaños de fuente por defecto en %, por cada breakpoint.
+ * Ejemplo de uso.
+ *
+ * body {
+ *   @include rootsize;
+ * }
+ */
+@mixin rootsize {
+
+  // Si existe tiene el breakpoint base
+  @if map-has-key($root-sizes, $base-breakpoints) {
+    font-size: #{map-get($root-sizes, $base-breakpoints) / 16 * 100%};
+  }
+
+  // Recorre todos los breakpoint.
+  @each $breakpoint, $size in $root-sizes {
+    @if $breakpoint != $base-breakpoints {
+      @include media($breakpoint) {
+        font-size: #{$size / 16 * 100%};
+      }
+    }
+  }
+}
+
+
+/**
+ * FONTSIZE
+ *
+ * Devuelve el valor en px y rem.
+ * Admite un valor númerico o un alias de la escala modular.
+ * También genera un media-query con el valor proporcional para cada breakpoint,
+ * en base a los tamaños de fuente por defecto $root-sizes. Ejemplo de uso.
+ *
+ * .header { @include fontsize(14): }
+ * .header { @include fontsize(alpha); }
+ */
+@mixin fontsize($fontsize) {
+
+  // Tipo de la variable $fontsize
+  $font-value: type-of($fontsize);
+
+  // Si el valor del $fontsize es un número
+  @if $font-value == number {
+
+    font-size: #{$fontsize / 16}rem;
+    line-height: #{ceil($fontsize / ($space * 16)) * $space}rem;
+
+  }
+
+  // Si el valor del $fontsize no es un número y es el alias de la escala modular
+  @else {
+    @if map-has-key($scale-level, $fontsize) {
+      $level: map-get($scale-level, $fontsize);
+      $module: pow($scale, $level);
+
+      font-size: #{$module}rem;
+      line-height: #{ceil(($module * 2.5) / $space) * ($space / 2)}rem;
+    }
+  }
+}

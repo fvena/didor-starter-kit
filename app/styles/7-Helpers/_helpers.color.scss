@@ -1,0 +1,53 @@
+/**
+ * COLORS
+ */
+
+@each $name, $color in $color-brand-map {
+  /***
+    section: colors
+    group: brand
+    name: #{$name}
+    value: "#{$color}"
+   ***/
+  .text-#{$name} {
+    color: $color !important;
+  }
+
+  .bg-#{$name} {
+    background-color: $color !important;
+  }
+}
+
+
+@each $name, $color in $color-gray-map {
+  /***
+    section: colors
+    group: gray
+    name: #{$name}
+    value: "#{$color}"
+   ***/
+  .text-#{$name} {
+    color: $color !important;
+  }
+
+  .bg-#{$name} {
+    background-color: $color !important;
+  }
+}
+
+
+@each $name, $color in $color-notify-map {
+  /***
+    section: colors
+    group: notify
+    name: #{$name}
+    value: "#{$color}"
+   ***/
+  .text-#{$name} {
+    color: $color !important;
+  }
+
+  .bg-#{$name} {
+    background-color: $color !important;
+  }
+}

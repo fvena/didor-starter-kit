@@ -1,0 +1,16 @@
+/**
+ * ELEMENTS
+ *
+ * Contienen los estilos sin clases, es decir, como se verá un elemento H1 a 
+ * lo largo de toda la aplicación por defecto, sin una clase que modifique su 
+ * estilo. Se configuran inicialmente en el proyecto, y no suelen modificarse 
+ * posteriormente.
+ */
+
+@import 'elements.page';
+@import 'elements.images';
+@import 'elements.list';
+@import 'elements.form';
+@import 'elements.table';
+@import 'elements.link';
+@import 'elements.type';

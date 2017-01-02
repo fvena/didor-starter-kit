@@ -1,0 +1,105 @@
+/**
+ * GRID
+ */
+
+/**
+ * Conjunto de mixins que me permiten utilizar un grid. Ejemplo de uso.
+ *
+ * Funcionamiento básico.
+ *
+ * .contenedor {
+ *   @include outer-container;
+ * }
+ *
+ * .col1 { @include span-columns(4); }
+ * .col2 { @include span-columns(6); }
+ * .col3 { @include span-columns(2); }
+ *
+ *
+ * Determinar el número de columnas del contenedor padre.
+ *
+ * .col1 { @include span-columns(2,5); }
+ * .col2 { @include span-columns(3,5); }
+ *
+ *
+ * Varias filas dentro de un contenedor. Hay que añadirle "omega" a la última
+ * columna de cada fila.
+ *
+ * .col1 { @include span-columns(8); }
+ * .col2 { @include span-columns(4); @include omega; }
+ * .col3 { @include span-columns(6); }
+ * .col4 { @include span-columns(6); }
+ *
+ *
+ * Anidar unas columnas dentro de otras. De la misma forma, aunque para mantener
+ * la rejilla se recomienda indicar las columnas del contenedor padre.
+ *
+ * .col1 { @include span-columns(4); }
+ * .col2 { @include span-columns(8); }
+ *   .col3 { @include span-columns(3,8); }
+ *   .col4 { @include span-columns(5,8); }
+ * .col5 { @include span-columns(12); }
+ *
+ *
+ * Dejar columnas vacías a la izquierda.
+ *
+ * .col1 { @include span-columns(4); @include shift(4)}
+ * .col2 { @include span-columns(4); }
+ *
+ *
+ * Rejilla tipo card.
+ *
+ * .col { @include span-columns(3); @include omega(4n); }
+ *
+ *
+ * Responsive.
+ *
+ * .col1 { @include span-columns(6); }
+ * .col2 { @include span-columns(6); }
+ *
+ * @include media-query(palm) {
+ *   .col1 { @include span-columns(12); }
+ *   .col2 { @include span-columns(12∫); }
+ * }
+ */
+
+@mixin outer-container {
+  @include clearfix;
+}
+
+
+
+@mixin span-columns($columns, $parent-columns: $grid-columns) {
+  $multiplier: $columns / $parent-columns;
+  $width: calc(100% * #{$multiplier} - #{$gutter} * (1 - #{$multiplier}));
+
+  display: block;
+  width: $width;
+  margin-right: $gutter;
+  float: left;
+
+  &:last-child { margin-right: 0; }
+}
+
+
+
+@mixin shift($columns, $parent-columns: $grid-columns) {
+  $multiplier: $columns / $parent-columns;
+  $width: calc(100% * #{$multiplier} - #{$gutter} * (1 - #{$multiplier}) + #{$gutter});
+
+  margin-left: $width;
+}
+
+
+
+@mixin omega($query: block) {
+  @if ($query == block) {
+    margin-right: 0;
+  }
+
+  @else {
+    &:nth-child(#{$query}) {
+      margin-right: 0;
+    }
+  }
+}

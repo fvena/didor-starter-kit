@@ -1,5 +1,33 @@
 @charset 'UTF-8';
 
+/*! Didor framework v1.0.0 | MIT License | github.com/fvena/didor */
+
+/**
+ * DIDOR sigue la una estrucutura de archivos basada en la metodología ITCSS
+ * (Inverted Triangle CSS), para la nomenclatura usa BEM.
+ *
+ * La metodología ITCSS, se basa en dividir todo el CSS en capas que formen un
+ * triangulo invertido. Esta estructura ayuda a ordenar el CSS de forma efectiva,
+ * el desarrollo modular y evitar los problemas de especificidad. Las capas se
+ * forman con directorios en base a las siguientes características.
+ *
+ * Settings   - Configuración y variables globales.
+ * Tools      - Mixins y funciones Sass.
+ * Generic    - Resetea y normaliza los valores por defecto de los navegadores.
+ * Elements   - Elementos HTML sin clases.
+ * Objects    - Cosmetic-free design patterns.
+ * Components - Designed components, chunks of UI.
+ * Helpers    - Helpers and overrides.
+ */
+
 @import 'buttons';
 @import 'buttons2';
 @import 'buttons3';
+
+@import '1-Settings/main';
+@import '2-Tools/main';
+@import '3-Generic/main';
+@import '4-Elements/main';
+@import '5-Objects/main';
+@import '6-Components/main';
+@import '7-Helpers/main';

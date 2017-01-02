@@ -1,0 +1,33 @@
+/**
+ * TABLE
+ */
+
+table {
+  width: 100%;
+  margin-bottom: $space;
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+thead {
+  text-align: left;
+}
+
+td,
+th {
+  padding: quarter($space);
+}
+
+th {
+  font-family: font($heading-type, font-family);
+  font-style: normal;
+  font-weight: font($heading-type, regular);
+}
+
+caption,
+th,
+td {
+  font-weight: normal;
+  text-align: left;
+  vertical-align: middle;
+}

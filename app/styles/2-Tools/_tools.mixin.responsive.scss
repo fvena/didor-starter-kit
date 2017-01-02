@@ -1,0 +1,34 @@
+/**
+ * RESPONSIVE MIXIN
+ */
+
+/**
+ * Mixin que genera media query en base a los alias definidos en los setting
+ * `_settings.responsive.scss`. Ejemplo de uso.
+ *
+ * .foo {
+ *   color: green;
+ *
+ *   @include media(palm) {
+ *     color: red;
+ *   }
+ * }
+ */
+
+@mixin media($media-query) {
+
+  // Si el alias existe en la lista que indicamos en el setting
+  @if map-has-key($breakpoints, $media-query) {
+
+    // Crea la regla media-query
+    @media #{map-get($breakpoints, $media-query)} {
+      @content;
+    }
+  }
+
+  // Si no existe ningun alias muestra una alerta
+  @else {
+    @warn 'Oops! Breakpoint "#{$media-query}" does not exist.';
+  }
+
+}

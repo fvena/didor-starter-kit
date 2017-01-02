@@ -1,0 +1,127 @@
+/**
+ * SPACING
+ */
+
+// Lista de espacios
+// Se generarán clases helpers con márgenes y padding automaticamente por cada 
+// item de la lista de la forma:
+// .margin-half-top
+// .padding-triple-left
+$spacing-map: (
+  'quarter': quarter($space),
+  'third': third($space),
+  'halve': halve($space),
+  'double': double($space),
+  'triple': triple($space),
+  'quadruple': quadruple($space)
+) !default;
+
+
+/**
+ * Genera clases helper con los margin y padding en base al $space del tipo:
+ *
+ * .margin            // margin: $space !important;
+ * .padding-top       // padding-top: $space !important;
+ * .no-margin-bottom  // margin-bottom: 0 !important;
+ */
+@each $attr in margin, padding {
+  .#{$attr} {
+    #{$attr}: $space !important;
+  }
+
+  .#{$attr}-top {
+    #{$attr}-top: $space !important;
+  }
+
+  .#{$attr}-right {
+    #{$attr}-right: $space !important;
+  }
+
+  .#{$attr}-bottom {
+    #{$attr}-bottom: $space !important;
+  }
+
+  .#{$attr}-left {
+    #{$attr}-left: $space !important;
+  }
+
+  .#{$attr}-sides {
+    #{$attr}-right: $space !important;
+    #{$attr}-left: $space !important;
+  }
+
+  .#{$attr}-ends {
+    #{$attr}-top: $space !important;
+    #{$attr}-bottom: $space !important;
+  }
+
+  .no-#{$attr} {
+    #{$attr}: 0 !important;
+  }
+
+  .no-#{$attr}-top {
+    #{$attr}-top: 0 !important;
+  }
+
+  .no-#{$attr}-right {
+    #{$attr}-right: 0 !important;
+  }
+
+  .no-#{$attr}-bottom {
+    #{$attr}-bottom: 0 !important;
+  }
+
+  .no-#{$attr}-left {
+    #{$attr}-left: 0 !important;
+  }
+
+  .no-#{$attr}-sides {
+    #{$attr}-right: 0 !important;
+    #{$attr}-left: 0 !important;
+  }
+
+  .no-#{$attr}-ends {
+    #{$attr}-top: 0 !important;
+    #{$attr}-bottom: 0 !important;
+  }
+
+
+  /**
+   * Genera clases helper con los margin y padding, en base al $space y a los
+   * medidas indicadas en $spacing-map del tipo
+   *
+   * .margin-double         // margin: 2 * $space !important;
+   * .padding-halve-top     // margin-top: $space / 2 !important;
+   */
+  @each $name, $size in $spacing-map {
+    .#{$attr}-#{$name} {
+      #{$attr}: #{$size} !important;
+    }
+
+    .#{$attr}-#{$name}-top {
+      #{$attr}-top: #{$size} !important;
+    }
+
+    .#{$attr}-#{$name}-right {
+      #{$attr}-right: #{$size} !important;
+    }
+
+    .#{$attr}-#{$name}-bottom {
+      #{$attr}-bottom: #{$size} !important;
+    }
+
+    .#{$attr}-#{$name}-left {
+      #{$attr}-left: #{$size} !important;
+    }
+
+    .#{$attr}-#{$name}-sides {
+      #{$attr}-right: #{$size} !important;
+      #{$attr}-left: #{$size} !important;
+    }
+
+    .#{$attr}-#{$name}-ends {
+      #{$attr}-top: #{$size} !important;
+      #{$attr}-bottom: #{$size} !important;
+    }
+  }
+}

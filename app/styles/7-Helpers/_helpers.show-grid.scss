@@ -1,0 +1,11 @@
+/**
+ * SHOWGRID
+ *
+ * Muestra lineas base en base a la altura de línea
+ */
+
+.show-grid {
+  background-image: linear-gradient(to bottom, cyan 0, rgba(255, 255, 255, 0) 1px);
+  background-repeat: repeat-y;
+  background-size: 100% $space;
+}

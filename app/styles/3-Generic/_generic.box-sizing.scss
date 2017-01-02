@@ -1,0 +1,18 @@
+/**
+ * BOX SIZING
+ * 
+ * Establece de forma global `box-sizing` como `border-box`.
+ */
+html {
+  box-sizing: border-box;
+}
+
+* {
+
+  &,
+  &:before,
+  &:after {
+    box-sizing: border-box;
+  }
+
+}

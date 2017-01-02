@@ -1,0 +1,36 @@
+/**
+ * PAGE
+ *
+ * Estilos de página.
+ *
+ * 1. Fuerza que las barras de navegación estén siempre visibles para evitar los
+ *    saltos cuando navegamos a otras páginas que no tienen suficiente contenido
+ *    para tener que mostrar la barra de navegación.
+ * 2. Asegura que la página ocupe al menos toda la altura de la pantalla.
+ * 3. Previene que algunos navegadores móviles aplique zoom de forma automática
+ *    a los textos.
+ * 4. Evita que las fuentes en OSX tengan un aspecto más grueso comparadas con
+ *    otros navegadores que no renderizan el texto usando antialiaded.
+ */
+html {
+  @include rootsize;
+  height: 100%; /* [2] */
+  background: $base-background-color;
+  color: $base-text-color;
+  line-height: $space;
+  text-size-adjust: 100%; /* [3] */
+  overflow-y: scroll; /* [1] */
+  -moz-osx-font-smoothing: grayscale; /* [4] */
+  -webkit-font-smoothing: antialiased; /* [4] */
+}
+
+
+body {
+  @include fontsize(zeta);
+  height: 100%;
+  font-family: font($body-type, font-family);
+  font-style: normal;
+  font-weight: font($body-type, regular);
+  line-height: $space;
+  overflow-x: hidden;
+}

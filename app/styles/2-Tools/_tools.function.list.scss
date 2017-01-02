@@ -1,0 +1,145 @@
+/**
+ * LIST FUNCTIONS
+ */
+
+
+/**
+ * FONT
+ *
+ * Devuelve una propiedad de la fuente indicada. Ejemplo de uso.
+ *
+ * body {
+ *   font-family: font($bodytype, font-family);
+ *   font-weight: font($bodytype, regular);
+ *   line-height: font($bodytype, line-height);
+ * }
+ */
+@function font($family, $property) {
+
+  // Si existe la familia
+  @if variable-exists(family) {
+
+    // Si existe la propiedad dentro de la familia
+    @if map-has-key($family, $property) {
+      @if ($property == 'font-family') {
+        @return unquote(map-get($family, $property));
+      }
+
+      @else {
+        @return map-get($family, $property);
+      }
+    }
+
+    @else {
+      // Si no existe la propiedad dentro de la familia
+      @warn 'Oops! La propiedad ‘#{$property}’ no existe en la familia '#{$family}'.';
+    }
+  }
+
+  @else {
+    // Si no existe la familia
+    @warn 'Oops! La familia ‘#{$family}’ no existe.';
+  }
+}
+
+
+/**
+ * BRAND
+ *
+ * Devuelve un color de la lista de colores de marca. Por defecto, sino se
+ * especifica, se devuelve el color primary. Ejemplo de uso.
+ *
+ * body {
+ *   color: brand();
+ *   color: brand(primary);
+ * }
+ */
+@function brand($color: primary) {
+
+  // Si existe el listado colores
+  @if variable-exists(color-brand-map) {
+
+    // Si existe la propiedad dentro de la familia
+    @if map-has-key($color-brand-map, $color) {
+      @return map-get($color-brand-map, $color);
+    }
+
+    @else {
+      // Si no existe la propiedad dentro de la familia
+      @warn 'Oops! El color ‘#{$color}’ no existe en la lista $color-brand-map.';
+    }
+  }
+
+  @else {
+    // Si no existe la familia
+    @warn 'Oops! La lista $color-brand-map no existe.';
+  }
+}
+
+
+/**
+ * GRAY
+ *
+ * Devuelve un color de la lista de colores grises. Por defecto, sino se
+ * especifica, se devuelve el color negro. Ejemplo de uso.
+ *
+ * body {
+ *   color: gray();
+ *   color: gray(2);
+ * }
+ */
+@function gray($color) {
+
+  // Si existe el listado colores
+  @if variable-exists(color-gray-map) {
+
+    // Si existe la propiedad dentro de la familia
+    @if map-has-key($color-gray-map, $color) {
+      @return map-get($color-gray-map, $color);
+    }
+
+    @else {
+      // Si no existe la propiedad dentro de la familia
+      @warn 'Oops! El color ‘#{$color}’ no existe en la lista $color-gray-map.';
+    }
+  }
+
+  @else {
+    // Si no existe la familia
+    @warn 'Oops! La lista $color-gray-map no existe.';
+  }
+}
+
+
+/**
+ * NOTIFY
+ *
+ * Devuelve un color de la lista de colores de notificaciones. Por defecto, sino se
+ * especifica, se devuelve el color del error. Ejemplo de uso.
+ *
+ * body {
+ *   color: notify();
+ *   color: notify(2);
+ * }
+ */
+@function notify($color: error) {
+
+  // Si existe el listado colores
+  @if variable-exists(color-notify-map) {
+
+    // Si existe la propiedad dentro de la familia
+    @if map-has-key($color-notify-map, $color) {
+      @return map-get($color-notify-map, $color);
+    }
+
+    @else {
+      // Si no existe la propiedad dentro de la familia
+      @warn 'Oops! El color ‘#{$color}’ no existe en la lista $color-notify-map.';
+    }
+  }
+
+  @else {
+    // Si no existe la familia
+    @warn 'Oops! La lista $color-notify-map no existe.';
+  }
+}

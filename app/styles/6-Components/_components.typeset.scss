@@ -1,0 +1,138 @@
+/**
+ * TYPESET
+ *
+ * Estilos para texto typeset
+ */
+
+.typeset {
+
+  // Links más cool.
+  p a,
+  li a {
+    background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0) 50%, lighten($base-link-color, 20%) 50%);
+    background-repeat: repeat-x;
+    background-position: 0 93%;
+    background-size: 100% .15rem;
+    text-shadow: .1rem 0 $base-background-color,
+                 .15rem 0 $base-background-color,
+                -.1rem 0 $base-background-color,
+                -.15rem 0 $base-background-color;
+
+    &:hover,
+    &:active,
+    &:focus {
+      background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0) 50%, lighten($base-link-color-dark, 20%) 50%);
+    }
+  }
+
+
+  // Ligaduras OpenType y figuras oldstyle activas si están disponibles.
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-feature-settings: 'dlig', 'liga', 'lnum', 'kern';
+  }
+
+  p,
+  li,
+  dt,
+  dd {
+    font-feature-settings: 'kern', 'onum', 'liga';
+  }
+
+  table {
+    font-feature-settings: 'liga', 'lnum', 'tnum', 'kern';
+  }
+
+
+  // Listas
+  ul,
+  ol {
+
+    li {
+      margin-left: 0;
+
+      @include media(palm) {
+        margin-left: 2rem;
+      }
+
+      ol,
+      ul {
+        margin-left: 2rem;
+        padding-top: $space;
+      }
+    }
+  }
+
+
+  // Listas ordenadas.
+  ol {
+    list-style-type: none;
+
+    li {
+      counter-increment: top-level;
+      position: relative;
+
+      &:before {
+        content: counter(top-level) '.';
+        font-feature-settings: 'lnum', 'tnum';
+        margin-left: -3rem;
+        position: absolute;
+        text-align: right;
+        width: 2em;
+      }
+
+      ul li:before { content: ''; }
+      ul li ol li { counter-increment: alt-level; }
+      ul li ol li:before { content: counter(alt-level) '.'; }
+
+      ol li {
+        counter-increment: sub-level;
+
+        &:before {
+          content: counter(top-level) '.' counter(sub-level);
+        }
+
+        ul li:before { content: ''; }
+
+        ol li {
+          counter-increment: sub-sub-level;
+
+          &:before {
+            content: counter(top-level) '.' counter(sub-level) '.' counter(sub-sub-level);
+          }
+        }
+      }
+    }
+  }
+
+
+
+
+  // Letter space those capitals people, Jan Tschichold would be proud.
+  .upper {
+    font-kerning: normal;
+    letter-spacing: .1rem;
+    text-transform: uppercase;
+  }
+
+  // Real small caps.
+  .small-caps {
+    font-feature-settings: 'smcp', 'kern';
+    font-kerning: normal;
+    letter-spacing: .1rem;
+  }
+
+  // Consistent height numbers with OpenType.
+  .lining-numerals {
+    font-feature-settings: 'lnum', 'kern';
+  }
+
+  // Ascending and descending numbers with OpenType.
+  .oldstyle-numerals {
+    font-feature-settings: 'onum', 'kern';
+  }
+}

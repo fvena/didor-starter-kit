@@ -1,0 +1,84 @@
+/**
+ * FONTS SETTINGS
+ */
+
+// Importa tus fuentes aquí
+@import 'https://fonts.googleapis.com/css?family=Droid+Sans:400,700|Droid+Serif:400,400i,700';
+
+
+
+// Añade una lista con cada fuente que quieras utilizar.
+//
+// font-family:   Obligatorio   Indica la familia tipográfica. Es importante
+//                              escribir la lista de familias entre comillas
+//                              simples: '"Helvetica", sans-serif'.
+//
+// Line-height:   Obligatorio   Indica la altura de línea para esa fuente. Para
+//                              mantener el ritmo vertical, solo se tiene en
+//                              cuenta la altura de línea de la fuente utilizada
+//                              en el body.
+//
+// bold,
+// regular,
+// slim,
+// condensed:     Optativas     Indican los pesos de la fuente, puedes usar
+//                              cualquier nombre que quieras.
+//
+// italic:        Optativa      Indica los estilos de la fuente, puedes usar
+//                              cualquier nombre que quieras.
+//
+
+$body-type: (
+  font-family: '"Droid Serif", serif',
+  regular: 400,
+  bold: 700,
+  italic: italic,
+) !default;
+
+$heading-type: (
+  font-family: '"Droid Sans", sans-serif',
+  regular: 400,
+  bold: 700,
+) !default;
+
+$monospace-type: (
+  font-family: '"Menlo", monospace',
+  regular: 400
+) !default;
+
+
+
+// Tamaños de fuente para cada tamaño de pantalla.
+// !Importante! Asegurate de que los nombres coincidan con los que has usado en
+// _settings.responsive.
+$root-sizes: (
+  palm:  13,
+  lap:   15,
+  desk:  18,
+  large: 20,
+) !default;
+
+
+
+// Altura de línea base
+$base-line-height: 2;
+
+
+
+// Escala para crear los tamaños de texto proporcionalmente
+$scale: 1.146;
+
+
+
+// Listado de la escala modular
+$scale-level: (
+  alpha:     5,
+  beta:      4,
+  gamma:     3,
+  delta:     2,
+  epsilon:   1,
+  zeta:      0,  // Base size
+  eta:      -1,
+  theta:    -2,
+  iota:     -3
+) !default;

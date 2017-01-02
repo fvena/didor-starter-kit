@@ -1,32 +1,20 @@
-/**
-[Section] Buttons 2
-[Name] Square buttons
-[Description]
+/***
+  section: Buttons 2
+  name: Square buttons
+  description: |
+    Very pretty square buttons
 
-Very pretty square buttons
-
-### States
-
-- ```.btn.btn-small``` - Button size small.
-- ```.btn.btn-medium``` - Button size medium.
-- ```.btn.btn-large``` - Button size large.
-
-### Sources
-- /app/styles/_button.scss
-
-[Statuses]
-btn-small, btn-medium, btn-large
-
-[Example]
-p Simple button Red
-p
-  a.btn Button
-p Sizes
-p
-  a.btn.btn-small button
-  a.btn.btn-medium button
-  a.btn.btn-large button
-**/
+    ### States
+    - ```.btn.btn-small``` - Button size small.
+    - ```.btn.btn-medium``` - Button size medium.
+    - ```.btn.btn-large``` - Button size large.
+  statuses: [btn-small, btn-medium, btn-large]
+  example: |
+    a.btn Button
+    a.btn.btn-small button
+    a.btn.btn-medium button
+    a.btn.btn-large button
+***/
 
 .btn {
   display: inline-block;
@@ -54,50 +42,36 @@ p
 }
 
 
-/**
-[Section] Buttons 2
-[Name] Round buttons
-[Description]
+/***
+  section: Buttons 2
+  name: Round buttons
+  description: |
+    Very pretty rounded buttons
 
-Very pretty rounded buttons
-
-### States
-
-- ```.btn.btn-small``` - Button size small.
-- ```.btn.btn-medium``` - Button size medium.
-- ```.btn.btn-large``` - Button size large.
-
-### Sources
-- /app/styles/_button.scss
-
-[Statuses]
-btn-small, btn-medium, btn-large
-
-[Example]
-a.btn.btn-round Button
-a.btn.btn-round.btn-small button
-a.btn.btn-round.btn-medium button
-a.btn.btn-round.btn-large button
-**/
+    ### States
+    - ```.btn.btn-small``` - Button size small.
+    - ```.btn.btn-medium``` - Button size medium.
+    - ```.btn.btn-large``` - Button size large.
+  statuses: [btn-small, btn-medium, btn-large]
+  example: |
+    a.btn.btn-round Button
+    a.btn.btn-round.btn-small button
+    a.btn.btn-round.btn-medium button
+    a.btn.btn-round.btn-large button
+***/
 
 .btn-round {
   border-radius: 20px;
 }
 
 
-/**
-[Section] Buttons 2
-[Name] Links
-[Description]
-
-Very pretty links
-
-### Sources
-- /app/styles/_button.scss
-
-[Example]
-a.btn-link Button
-**/
+/***
+  section: Buttons 2
+  name: Links
+  description: Very pretty links
+  example: |
+    a.btn-link Button
+***/
 
 .btn-link {
   background: none;

@@ -1,0 +1,18 @@
+/**
+ * SETTINGS
+ *
+ * En esta capa se definen las variables y opciones de configuración globales,
+ * es importante tener en cuenta que son globales: fuentes, tamaños de fuentes,
+ * paletas de colores, espacios, breakpoints... El objetivo es que sean simples
+ * y fáciles de mantener.
+ *
+ * Las opciones específicas del tipo $headline-background-color,
+ * $headline-height, $input-color deben ir en sus correspondientes archivos,
+ * de esta forma estos serán más modulares, y los ajustes globales son más
+ * faciles de mantener.
+ */
+
+@import 'settings.responsive';
+@import 'settings.fonts';
+@import 'settings.colors';
+@import 'settings.defaults';

@@ -1,0 +1,30 @@
+/**
+ * RESPONSIVE SETTINGS
+ */
+
+/**
+ * Breakpoints
+ *  
+ * Listado de los alias con los puntos de corte para un desarrollo adaptable.
+ * Puedes cambiarles el nombre, el valor o añadir más puntos.
+ *
+ * 40em ~ 640px
+ * 64em ~ 1024px
+ * 100em ~ 1600px
+ */
+
+$breakpoints: (
+  palm:     'screen and (max-width: 40em)',
+  lap:      'screen and (min-width: 40em) and (max-width: 64em)',
+  portable: 'screen and (max-width: 64em)',
+  desk:     'screen and (min-width: 64em)',
+  large:    'screen and (min-width: 100em)'
+) !default;
+
+
+/**
+ * Tamaño base
+ *
+ * Indica cual es el tamaño base sobre el que estamos desarrollando
+ */
+$base-breakpoints: desk;

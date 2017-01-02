@@ -1,0 +1,12 @@
+/**
+ * GENERIC
+ * 
+ * Es la primera capa que tiene efecto sobre el CSS. Sirve generalmente para
+ * partir con el mismo lienzo en todos los navegadores, reseteando y normalizando
+ * los valores por defecto. También puede contener configuraciones globales que
+ * afecten a todo, como el box-sizing.
+ */
+
+@import 'generic.normalize';
+@import 'generic.reset';
+@import 'generic.box-sizing';
