@@ -108,7 +108,7 @@ gulp.task('server', ['style', 'lint', 'pug'], function() {
   browserSync({
     notify: false,
     logPrefix: 'DSK',
-    server: [paths.tmp, paths.src],
+    server: [paths.tmp, paths.src, paths.assets.folder],
     port: 3000
   });
 
@@ -362,9 +362,22 @@ gulp.task('images', () =>
  */
 
 gulp.task('copy', () =>
-  gulp.src([paths.assets.all, paths.fonts.all], {
+  gulp.src([paths.assets.all], {
     dot: true
   }).pipe(gulp.dest(paths.assets.dest))
+);
+
+
+
+/*
+ * COPY Fonts
+ *   - Copia todos los assets a la carpeta dist.
+ */
+
+gulp.task('fonts', () =>
+  gulp.src([paths.fonts.all], {
+    dot: true
+  }).pipe(gulp.dest(paths.fonts.dest))
 );
 
 
@@ -386,7 +399,7 @@ gulp.task('clean', () => del([paths.rel.distAll, paths.rel.noDistGit], {dot: tru
  */
 
 gulp.task('default', ['clean'], function() {
-  runSequence(['style', 'pug'], ['compress', 'images', 'copy', 'favicon']);
+  runSequence(['style', 'pug'], ['compress', 'images', 'copy', 'fonts', 'favicon']);
 });
 
 gulp.task('serve', ['clean-tmp'], function() {
